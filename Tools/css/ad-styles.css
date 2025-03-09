@@ -1,0 +1,63 @@
+/* Ad Styles */
+
+/* Common ad container styles */
+.ad-banner {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+/* Sidebar ad container */
+.sidebar-ad {
+    position: sticky;
+    top: 1rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+    min-height: 600px;
+    margin-bottom: 1rem;
+}
+
+/* Footer ad container */
+.ad-banner-footer {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0.5rem;
+    text-align: center;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive ad container for mobile */
+@media (max-width: 768px) {
+    .sidebar-ad {
+        position: static;
+        min-height: 250px;
+        margin: 1rem 0;
+    }
+    
+    .ad-banner {
+        min-height: 90px;
+    }
+}
+
+/* Ad label */
+.ad-label {
+    font-size: 0.75rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+} 

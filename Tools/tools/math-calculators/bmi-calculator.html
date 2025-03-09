@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Calculate Body Mass Index | Multi-Tools</title>
+    <meta name="description" content="Free online BMI calculator. Calculate your Body Mass Index using metric or imperial units and get detailed health information.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google AdSense Code - Add your AdSense code here -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tool-header {
+            background: linear-gradient(45deg, #0d6efd, #0099ff);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .tool-header .tool-description {
+            color: white;
+            opacity: 0.9;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+        .calculator-card {
+            border: none;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        .calculator-card .card-header {
+            background-color: #f8f9fa;
+            border-bottom: none;
+            padding: 1rem;
+        }
+        .calculator-card .card-body {
+            padding: 1.5rem;
+        }
+        .result-box {
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .bmi-category {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .unit-toggle {
+            margin-bottom: 1.5rem;
+        }
+        .health-info {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .bmi-chart {
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, #17a2b8, #28a745, #ffc107, #dc3545);
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        .bmi-marker {
+            width: 2px;
+            height: 30px;
+            background-color: #000;
+            position: relative;
+            left: 50%;
+            margin-top: -25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-placeholder"></div>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+        <div class="container">
+            <h1><i class="fas fa-weight me-2"></i>BMI Calculator</h1>
+            <p class="tool-description">
+                Calculate your Body Mass Index (BMI) and get detailed health information
+            </p>
+        </div>
+    </div>
+
+    <main class="container-fluid py-4">
+        <div class="row">
+            <!-- Left Sidebar - Ads -->
+            <div class="col-lg-2">
+                <div class="sticky-top" style="top: 2rem;">
+                    <!-- Google AdSense - Vertical Ad Left -->
+                    <!-- Replace this div with your AdSense code for vertical ad -->
+                    <div class="ad-placeholder">
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <div class="ad-space vertical-ad">
+                                    <!-- AdSense Vertical Ad Code Here -->
+                                    <!-- Example: -->
+                                    <!-- <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                         data-ad-slot="XXXXXXXXXX"
+                                         data-ad-format="vertical"
+                                         data-full-width-responsive="true"></ins>
+                                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+                                    Advertisement
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Column -->
+            <div class="col-lg-8">
+                <div class="tool-container">
+                    <!-- BMI Calculator -->
+                    <div class="card calculator-card">
+                        <div class="card-header">
+                            <h2 class="h5 mb-0">Calculate Your BMI</h2>
+                        </div>
+                        <div class="card-body">
+                            <!-- Unit Toggle -->
+                            <div class="unit-toggle">
+                                <div class="btn-group" role="group">
+                                    <input type="radio" class="btn-check" name="units" id="metricUnits" checked>
+                                    <label class="btn btn-outline-primary" for="metricUnits">Metric</label>
+                                    <input type="radio" class="btn-check" name="units" id="imperialUnits">
+                                    <label class="btn btn-outline-primary" for="imperialUnits">Imperial</label>
+                                </div>
+                            </div>
+
+                            <!-- Metric Units Form -->
+                            <div id="metricForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="heightCm" class="form-label">Height (cm)</label>
+                                        <input type="number" class="form-control" id="heightCm" placeholder="Enter height">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="weightKg" class="form-label">Weight (kg)</label>
+                                        <input type="number" class="form-control" id="weightKg" placeholder="Enter weight">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Imperial Units Form -->
+                            <div id="imperialForm" style="display: none;">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Height</label>
+                                        <div class="row g-2">
+                                            <div class="col-6">
+                                                <input type="number" class="form-control" id="heightFt" placeholder="Feet">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="number" class="form-control" id="heightIn" placeholder="Inches">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="weightLbs" class="form-label">Weight (lbs)</label>
+                                        <input type="number" class="form-control" id="weightLbs" placeholder="Enter weight">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Results Section -->
+                            <div class="result-box mt-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 class="h6 mb-3">Your BMI Results:</h3>
+                                        <p class="result-value" id="bmiResult">--</p>
+                                        <p class="bmi-category" id="bmiCategory"></p>
+                                        <div class="bmi-chart"></div>
+                                        <div class="bmi-marker" id="bmiMarker" style="display: none;"></div>
+                                        <p class="health-info" id="healthInfo"></p>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button class="btn btn-primary" onclick="calculateBMI()">
+                                            Calculate BMI
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BMI Categories -->
+                    <div class="card calculator-card">
+                        <div class="card-header">
+                            <h2 class="h5 mb-0">BMI Categories</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>BMI Range</th>
+                                            <th>Category</th>
+                                            <th>Health Risk</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Below 18.5</td>
+                                            <td>Underweight</td>
+                                            <td>Increased risk of health problems</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18.5 - 24.9</td>
+                                            <td>Normal Weight</td>
+                                            <td>Lowest risk of health problems</td>
+                                        </tr>
+                                        <tr>
+                                            <td>25.0 - 29.9</td>
+                                            <td>Overweight</td>
+                                            <td>Increased risk of health problems</td>
+                                        </tr>
+                                        <tr>
+                                            <td>30.0 and above</td>
+                                            <td>Obese</td>
+                                            <td>High risk of health problems</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tips Section -->
+                    <div class="card calculator-card">
+                        <div class="card-header">
+                            <h2 class="h5 mb-0">Tips & Information</h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="mb-0">
+                                <li>BMI is a simple measure of body fat based on height and weight</li>
+                                <li>Choose your preferred unit system (metric or imperial)</li>
+                                <li>Enter your height and weight accurately for best results</li>
+                                <li>BMI is not suitable for athletes or pregnant women</li>
+                                <li>Consult a healthcare provider for professional advice</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar - Ads -->
+            <div class="col-lg-2">
+                <div class="sticky-top" style="top: 2rem;">
+                    <!-- Tips Card -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h3 class="h5 mb-0">Quick Tips</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0 small">
+                                <li class="mb-2">✓ Switch between metric/imperial</li>
+                                <li class="mb-2">✓ Get instant BMI results</li>
+                                <li class="mb-2">✓ View health category</li>
+                                <li>✓ See detailed information</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Google AdSense - Vertical Ad Right -->
+                    <!-- Replace this div with your AdSense code for vertical ad -->
+                    <div class="ad-placeholder">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="ad-space vertical-ad">
+                                    <!-- AdSense Vertical Ad Code Here -->
+                                    <!-- Example: -->
+                                    <!-- <ins class="adsbygoogle"
+                                         style="display:block"
+                                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                         data-ad-slot="YYYYYYYYYY"
+                                         data-ad-format="vertical"
+                                         data-full-width-responsive="true"></ins>
+                                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+                                    Advertisement
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script>
+        // Unit toggle functionality
+        document.getElementById('metricUnits').addEventListener('change', function() {
+            document.getElementById('metricForm').style.display = 'block';
+            document.getElementById('imperialForm').style.display = 'none';
+        });
+
+        document.getElementById('imperialUnits').addEventListener('change', function() {
+            document.getElementById('metricForm').style.display = 'none';
+            document.getElementById('imperialForm').style.display = 'block';
+        });
+
+        // Calculate BMI function
+        function calculateBMI() {
+            let bmi = 0;
+            const isMetric = document.getElementById('metricUnits').checked;
+
+            if (isMetric) {
+                const height = parseFloat(document.getElementById('heightCm').value) / 100; // convert to meters
+                const weight = parseFloat(document.getElementById('weightKg').value);
+
+                if (!height || !weight) {
+                    alert('Please enter both height and weight');
+                    return;
+                }
+
+                bmi = weight / (height * height);
+            } else {
+                const heightFt = parseFloat(document.getElementById('heightFt').value) || 0;
+                const heightIn = parseFloat(document.getElementById('heightIn').value) || 0;
+                const weight = parseFloat(document.getElementById('weightLbs').value);
+
+                if (!heightFt || !weight) {
+                    alert('Please enter both height and weight');
+                    return;
+                }
+
+                const totalInches = (heightFt * 12) + heightIn;
+                bmi = (weight * 703) / (totalInches * totalInches);
+            }
+
+            displayResults(bmi);
+        }
+
+        // Display BMI results
+        function displayResults(bmi) {
+            const bmiValue = bmi.toFixed(1);
+            document.getElementById('bmiResult').textContent = bmiValue;
+            
+            let category, info, color;
+            if (bmi < 18.5) {
+                category = 'Underweight';
+                info = 'Being underweight can increase health risks. Consider consulting a healthcare provider.';
+                color = '#17a2b8';
+            } else if (bmi < 25) {
+                category = 'Normal Weight';
+                info = 'You are in a healthy weight range. Maintain a balanced diet and regular exercise.';
+                color = '#28a745';
+            } else if (bmi < 30) {
+                category = 'Overweight';
+                info = 'Being overweight may increase health risks. Consider lifestyle changes and consult a healthcare provider.';
+                color = '#ffc107';
+            } else {
+                category = 'Obese';
+                info = 'Obesity significantly increases health risks. Please consult a healthcare provider for guidance.';
+                color = '#dc3545';
+            }
+
+            document.getElementById('bmiCategory').textContent = category;
+            document.getElementById('bmiCategory').style.color = color;
+            document.getElementById('healthInfo').textContent = info;
+
+            // Show and position BMI marker
+            const marker = document.getElementById('bmiMarker');
+            marker.style.display = 'block';
+            const position = ((bmi - 15) / 25) * 100;
+            marker.style.left = Math.min(Math.max(position, 0), 100) + '%';
+        }
+
+        // Add input event listeners for real-time calculation
+        const inputs = ['heightCm', 'weightKg', 'heightFt', 'heightIn', 'weightLbs'];
+        inputs.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.addEventListener('input', calculateBMI);
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer - Resize Images Online Free | Multi-Tools</title>
+    
+    <!-- Add Google AdSense Code Here -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+    
+    <meta name="description" content="Free online image resizer tool. Resize images by pixels, percentage, or preset sizes. No upload needed - all processing done locally in your browser.">
+    <meta name="keywords" content="image resizer, resize image, image size, online image resizer, free image resizer, photo resizer, picture resizer">
+    <meta name="author" content="Multi-Tools">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Image Resizer - Resize Images Online Free">
+    <meta property="og:description" content="Free online image resizer tool. Resize images by pixels, percentage, or preset sizes. No upload needed - all processing done locally in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multitools.com/tools/image-tools/image-resizer.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image Resizer - Resize Images Online Free">
+    <meta name="twitter:description" content="Free online image resizer tool. Resize images by pixels, percentage, or preset sizes. No upload needed - all processing done locally in your browser.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://multitools.com/tools/image-tools/image-resizer.html">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Common CSS -->
+    <link href="../../css/style.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Resizer",
+        "url": "https://multitools.com/tools/image-tools/image-resizer.html",
+        "description": "Free online tool to resize images. Supports multiple input formats and provides local browser processing for privacy.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Resize images by pixels or percentage",
+            "Maintain aspect ratio option",
+            "Multiple preset sizes available",
+            "Local browser processing",
+            "Free to use"
+        ]
+    }
+    </script>
+
+    <style>
+        .tool-container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
+        }
+
+        .tool-description {
+            color: #6c757d;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        .drop-zone {
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.3s ease;
+            background-color: #f8f9fa;
+        }
+
+        .drop-zone.dragover {
+            border-color: #0d6efd;
+            background-color: rgba(13, 110, 253, 0.05);
+        }
+
+        .preview-container {
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .preview-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .file-info {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .tool-instructions {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .tool-instructions h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-instructions ol {
+            padding-left: 1.2rem;
+        }
+
+        .tool-instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-banner {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .ad-label {
+            position: absolute;
+            top: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 0 0.5rem;
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+
+        .sidebar-ad {
+            position: sticky;
+            top: 1rem;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            min-height: 300px;
+        }
+
+        @media (max-width: 991.98px) {
+            .sidebar-ad {
+                display: none;
+            }
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .resize-options {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .preset-sizes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .preset-sizes .btn {
+            width: 100%;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-placeholder"></div>
+
+    <main class="container-fluid py-4">
+        <div class="row">
+            <!-- Left Sidebar - Ads -->
+            <div class="col-lg-2">
+                <div class="sticky-top" style="top: 2rem;">
+                    <div class="ad-placeholder">
+                        <!-- Vertical Ad Block - Left Sidebar -->
+                        <!-- Replace this comment with Google AdSense code for vertical ad unit -->
+                        <!-- Example:
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"
+                             data-ad-format="vertical"
+                             data-full-width-responsive="true"></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        -->
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <div class="ad-space vertical-ad">
+                                    Advertisement
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Column -->
+            <div class="col-lg-8">
+                <!-- Tool Title Section -->
+                <div class="text-center mb-4">
+                    <h1 class="tool-title">Image Resizer</h1>
+                    <p class="tool-description">Resize your images instantly to any dimension. Perfect for social media, websites, and documents.</p>
+                </div>
+
+                <!-- Optional: Top Ad Section (Horizontal) -->
+                <!-- Replace this comment with Google AdSense code for horizontal ad unit -->
+                <!-- Example:
+                <div class="ad-section mb-4">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"
+                         data-ad-format="horizontal"
+                         data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+                -->
+
+                <!-- Upload Section -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h5 mb-0">Upload Image</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="drop-zone" id="dropZone">
+                            <div class="upload-icon mb-3">
+                                <i class="fas fa-cloud-upload-alt fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="h5">Drag & Drop your image here</h3>
+                            <p class="text-muted mb-3">or</p>
+                            <button class="btn btn-primary" id="selectFile">
+                                <i class="fas fa-folder-open me-2"></i>Select File
+                            </button>
+                            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                            <p class="text-muted mt-3 mb-0">
+                                <small>Maximum file size: 10MB</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview & Settings Section -->
+                <div id="preview-section" style="display: none;">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h2 class="h5 mb-0">Preview & Settings</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="preview-container mb-3">
+                                <img id="image-preview" src="" alt="Preview">
+                            </div>
+                            <div class="file-info mb-4">
+                                <p class="mb-1">
+                                    <strong>File name:</strong> <span id="file-name">-</span>
+                                </p>
+                                <p class="mb-1">
+                                    <strong>Original size:</strong> <span id="file-size">-</span>
+                                </p>
+                                <p class="mb-0">
+                                    <strong>Dimensions:</strong> <span id="image-dimensions">-</span>
+                                </p>
+                            </div>
+
+                            <!-- Resize Options -->
+                            <div class="resize-options">
+                                <h3 class="h6 mb-3">Resize Settings</h3>
+
+                                <!-- Resize Method -->
+                                <div class="mb-3">
+                                    <label class="form-label">Resize Method</label>
+                                    <div class="btn-group w-100" role="group">
+                                        <input type="radio" class="btn-check" name="resizeMethod" id="byPixels" checked>
+                                        <label class="btn btn-outline-primary" for="byPixels">By Pixels</label>
+                                        
+                                        <input type="radio" class="btn-check" name="resizeMethod" id="byPercentage">
+                                        <label class="btn btn-outline-primary" for="byPercentage">By Percentage</label>
+                                    </div>
+                                </div>
+
+                                <!-- Preset Sizes -->
+                                <div class="mb-3">
+                                    <label class="form-label">Preset Sizes</label>
+                                    <div class="preset-sizes">
+                                        <button class="btn btn-outline-primary" data-width="1920" data-height="1080">HD (1920×1080)</button>
+                                        <button class="btn btn-outline-primary" data-width="1280" data-height="720">HD (1280×720)</button>
+                                        <button class="btn btn-outline-primary" data-width="800" data-height="600">Standard (800×600)</button>
+                                        <button class="btn btn-outline-primary" data-width="1080" data-height="1080">Instagram (1080×1080)</button>
+                                        <button class="btn btn-outline-primary" data-width="1200" data-height="630">Facebook (1200×630)</button>
+                                        <button class="btn btn-outline-primary" data-width="1024" data-height="512">Twitter (1024×512)</button>
+                                    </div>
+                                </div>
+
+                                <!-- Custom Size -->
+                                <div id="pixelInputs">
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <label for="widthInput" class="form-label">Width (px)</label>
+                                            <input type="number" class="form-control" id="widthInput" min="1">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="heightInput" class="form-label">Height (px)</label>
+                                            <input type="number" class="form-control" id="heightInput" min="1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="percentageInput" style="display: none;">
+                                    <div class="mb-3">
+                                        <label for="percentageValue" class="form-label">Scale (%)</label>
+                                        <input type="number" class="form-control" id="percentageValue" value="100" min="1" max="200">
+                                    </div>
+                                </div>
+
+                                <!-- Options -->
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="maintainAspectRatio" checked>
+                                        <label class="form-check-label" for="maintainAspectRatio">
+                                            Maintain aspect ratio
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-success w-100" id="resize-btn">
+                                    <i class="fas fa-expand-arrows-alt me-2"></i>Resize Image
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Section -->
+                <div id="result-section" style="display: none;">
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h2 class="h5 mb-0">Resized Image</h2>
+                            <button id="download-btn" class="btn btn-success btn-sm">
+                                <i class="fas fa-download me-2"></i>Download Image
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="preview-container mb-3">
+                                <img id="result-preview" src="" alt="Resized">
+                            </div>
+                            <div class="file-info mb-3">
+                                <p class="mb-1">
+                                    <strong>New size:</strong> <span id="new-size">-</span>
+                                </p>
+                                <p class="mb-0">
+                                    <strong>New dimensions:</strong> <span id="new-dimensions">-</span>
+                                </p>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary" id="resize-another-btn">
+                                    <i class="fas fa-redo me-2"></i>Resize Another Image
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h5 mb-0">About Image Resizer</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="h6">What is Image Resizer?</h3>
+                        <p>Image Resizer is a free online tool that allows you to resize images to any dimension quickly and easily. Whether you need to resize images for social media, websites, or documents, this tool provides a simple way to adjust image dimensions while maintaining quality.</p>
+
+                        <h3 class="h6">Key Features:</h3>
+                        <ul>
+                            <li>Resize by exact pixels or percentage</li>
+                            <li>Common preset sizes for social media</li>
+                            <li>Maintain aspect ratio option</li>
+                            <li>Preview before downloading</li>
+                            <li>Supports all major image formats</li>
+                            <li>100% free and secure</li>
+                            <li>No registration required</li>
+                            <li>Processing done locally in your browser</li>
+                        </ul>
+
+                        <h3 class="h6">Common Use Cases:</h3>
+                        <ul>
+                            <li>Resizing images for social media posts</li>
+                            <li>Preparing images for website use</li>
+                            <li>Creating thumbnail images</li>
+                            <li>Reducing image dimensions for email attachments</li>
+                            <li>Standardizing image sizes for presentations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- How to Use Section -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="h5 mb-0">How to Use</h2>
+                    </div>
+                    <div class="card-body">
+                        <ol class="mb-0">
+                            <li>Upload your image by dragging it into the upload area or clicking "Select File"</li>
+                            <li>Choose your resize method:
+                                <ul>
+                                    <li>By Pixels: Set exact width and height</li>
+                                    <li>By Percentage: Scale the image proportionally</li>
+                                    <li>Use preset sizes for common formats</li>
+                                </ul>
+                            </li>
+                            <li>Enable "Maintain aspect ratio" to prevent image distortion</li>
+                            <li>Click "Resize Image" to process</li>
+                            <li>Preview the result and download your resized image</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="col-lg-2">
+                <div class="sticky-top" style="top: 2rem;">
+                    <!-- Tips Card -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h3 class="h5 mb-0">Tips</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="mb-0">
+                                <li>Use preset sizes for social media platforms</li>
+                                <li>Keep aspect ratio enabled to prevent distortion</li>
+                                <li>Use percentage scaling for proportional resizing</li>
+                                <li>Check the preview before downloading</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Vertical Ad Block - Right Sidebar -->
+                    <!-- Replace this comment with Google AdSense code for vertical ad unit -->
+                    <!-- Example:
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"
+                         data-ad-format="vertical"
+                         data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    -->
+                    <div class="ad-placeholder">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="ad-space vertical-ad">
+                                    Advertisement
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/image-tools/image-resizer.js"></script>
+</body>
+</html> 

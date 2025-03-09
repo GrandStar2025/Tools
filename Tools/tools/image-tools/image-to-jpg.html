@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to JPG Converter - Convert Images to JPG Online Free | Multi-Tools</title>
+    <meta name="description" content="Free online image to JPG converter. Convert PNG, WEBP, GIF to JPG format easily. No upload needed - all conversion is done locally in your browser for privacy.">
+    <meta name="keywords" content="image to jpg, jpg converter, png to jpg, webp to jpg, convert to jpg, online jpg converter, free jpg converter, image converter">
+    <meta name="author" content="Multi-Tools">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Image to JPG Converter - Convert Images to JPG Online Free">
+    <meta property="og:description" content="Free online image to JPG converter. Convert PNG, WEBP, GIF to JPG format easily. No upload needed - all conversion is done locally in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multitools.com/tools/image-tools/image-to-jpg.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image to JPG Converter - Convert Images to JPG Online Free">
+    <meta name="twitter:description" content="Free online image to JPG converter. Convert PNG, WEBP, GIF to JPG format easily. No upload needed - all conversion is done locally in your browser.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://multitools.com/tools/image-tools/image-to-jpg.html">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "name": "Image to JPG Converter",
+        "url": "https://multitools.com/tools/image-tools/image-to-jpg.html",
+        "description": "Free online tool to convert images to JPG format. Supports multiple input formats and provides local browser processing for privacy.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Convert images to JPG format",
+            "Support for PNG, WEBP, and GIF input formats",
+            "Adjustable quality settings",
+            "Local browser processing",
+            "Free to use"
+        ]
+    }
+    </script>
+
+    <style>
+        .tool-container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
+        }
+
+        .tool-description {
+            color: #6c757d;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        .drop-zone {
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.3s ease;
+            background-color: #f8f9fa;
+        }
+
+        .drop-zone.dragover {
+            border-color: #0d6efd;
+            background-color: rgba(13, 110, 253, 0.05);
+        }
+
+        .preview-container {
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .preview-container img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .quality-presets {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .quality-presets .btn {
+            min-width: 120px;
+        }
+
+        .file-info {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .tool-instructions {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .tool-instructions h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-instructions ol {
+            padding-left: 1.2rem;
+        }
+
+        .tool-instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-banner {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .ad-label {
+            position: absolute;
+            top: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 0 0.5rem;
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+
+        .sidebar-ad {
+            position: sticky;
+            top: 1rem;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            min-height: 300px;
+        }
+
+        @media (max-width: 991.98px) {
+            .sidebar-ad {
+                display: none;
+            }
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .resize-options {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-placeholder"></div>
+
+    <main class="container py-4">
+        <div class="row">
+            <!-- Main Content Column -->
+            <div class="col-lg-9">
+                <div class="tool-container">
+                    <div class="tool-header">
+                        <i class="fas fa-image tool-icon"></i>
+                        <h1>Image to JPG Converter</h1>
+                        <p class="tool-description">Convert your images to JPG format instantly. Perfect for web optimization and sharing. Supports all major image formats.</p>
+                    </div>
+
+                    <!-- Top Ad Section -->
+                    <div class="ad-banner mb-4">
+                        <span class="ad-label">Advertisement</span>
+                        <!-- Ad Space -->
+                        Advertisement Space
+                    </div>
+
+                    <!-- Tool Content -->
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <!-- Upload Section -->
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="drop-zone" id="dropZone">
+                                        <div class="upload-icon mb-3">
+                                            <i class="fas fa-cloud-upload-alt fa-3x text-primary"></i>
+                                        </div>
+                                        <h3 class="h5">Drag & Drop your image here</h3>
+                                        <p class="text-muted mb-3">or</p>
+                                        <button class="btn btn-primary" id="selectFile">
+                                            <i class="fas fa-folder-open me-2"></i>Select File
+                                        </button>
+                                        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                                        <p class="text-muted mt-3 mb-0">
+                                            <small>Maximum file size: 10MB</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Preview & Settings Section -->
+                            <div id="preview-section" style="display: none;">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h2 class="h5 mb-0">Preview & Settings</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="preview-container mb-3">
+                                            <img id="image-preview" src="" alt="Preview">
+                                        </div>
+                                        <div class="file-info mb-4">
+                                            <p class="mb-1">
+                                                <strong>File name:</strong> <span id="file-name">-</span>
+                                            </p>
+                                            <p class="mb-1">
+                                                <strong>Original size:</strong> <span id="file-size">-</span>
+                                            </p>
+                                            <p class="mb-0">
+                                                <strong>Dimensions:</strong> <span id="image-dimensions">-</span>
+                                            </p>
+                                        </div>
+
+                                        <!-- Quality Settings -->
+                                        <div class="resize-options">
+                                            <h3 class="h6 mb-3">JPG Quality Settings</h3>
+                                            <div class="quality-presets mb-3">
+                                                <button class="btn btn-outline-primary" data-quality="0.6">Small Size</button>
+                                                <button class="btn btn-outline-primary" data-quality="0.8">Balanced</button>
+                                                <button class="btn btn-outline-primary" data-quality="0.9">High Quality</button>
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="quality-slider" class="form-label">
+                                                    Custom Quality: <span id="quality-value">80%</span>
+                                                </label>
+                                                <input type="range" class="form-range" id="quality-slider" 
+                                                       min="1" max="100" value="80">
+                                            </div>
+                                            <button class="btn btn-success w-100" id="convert-btn">
+                                                <i class="fas fa-sync-alt me-2"></i>Convert to JPG
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Result Section -->
+                            <div id="result-section" style="display: none;">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h2 class="h5 mb-0">Converted Image</h2>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <div class="preview-container mb-3">
+                                            <img id="result-preview" src="" alt="Converted">
+                                        </div>
+                                        <div class="file-info mb-3">
+                                            <p class="mb-1">
+                                                <strong>JPG size:</strong> <span id="jpg-size">-</span>
+                                            </p>
+                                            <p class="mb-0">
+                                                <strong>Compression ratio:</strong> <span id="compression-ratio">-</span>
+                                            </p>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary" id="download-btn">
+                                                <i class="fas fa-download me-2"></i>Download JPG
+                                            </button>
+                                            <button class="btn btn-outline-secondary" id="convert-another-btn">
+                                                <i class="fas fa-redo me-2"></i>Convert Another
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tool Instructions -->
+                    <div class="tool-instructions mt-4">
+                        <h2>How to Convert Images to JPG</h2>
+                        <ol>
+                            <li>Drag and drop your image file into the upload area, or click "Select File" to choose from your device.</li>
+                            <li>Preview your image and adjust the quality settings:
+                                <ul>
+                                    <li><strong>Small Size:</strong> Best for web and email</li>
+                                    <li><strong>Balanced:</strong> Good compromise between size and quality</li>
+                                    <li><strong>High Quality:</strong> Best visual quality</li>
+                                </ul>
+                            </li>
+                            <li>Click "Convert to JPG" to process.</li>
+                            <li>Download your converted image.</li>
+                        </ol>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Your images are processed entirely in your browser - they are never uploaded to any server.
+                        </div>
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h3 class="h5 mb-0">Tips for Best Results</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Use higher quality settings for images with fine details</li>
+                                    <li>Choose balanced quality for general-purpose images</li>
+                                    <li>Use small size for web thumbnails and previews</li>
+                                    <li>Consider file size requirements for your specific use case</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Ad Section -->
+                    <div class="ad-banner mt-4">
+                        <span class="ad-label">Advertisement</span>
+                        <!-- Ad Space -->
+                        Advertisement Space
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Column -->
+            <div class="col-lg-3">
+                <!-- Sticky Sidebar Ad -->
+                <div class="sidebar-ad">
+                    <span class="ad-label">Advertisement</span>
+                    <!-- Ad Space -->
+                    Advertisement Space
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/image-tools/image-to-jpg.js"></script>
+</body>
+</html> 

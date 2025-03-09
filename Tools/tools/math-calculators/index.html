@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math & Calculators - Free Online Calculator Tools | Multi-Tools</title>
+    <meta name="description" content="Free online math and calculator tools including percentage calculator, age calculator, BMI calculator, loan EMI calculator, and more.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .tool-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0d6efd;
+        }
+        .tool-description {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .category-header {
+            background: linear-gradient(45deg, #0d6efd, #0099ff);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .category-description {
+            max-width: 800px;
+            margin: 1rem auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-placeholder"></div>
+
+    <!-- Category Header -->
+    <div class="category-header">
+        <div class="container">
+            <h1><i class="fas fa-calculator me-2"></i>Math & Calculators</h1>
+            <p class="category-description">
+                Free online math and calculator tools for all your calculation needs. 
+                All calculations are performed locally in your browser for privacy and speed.
+            </p>
+        </div>
+    </div>
+
+    <main class="container py-4">
+        <!-- Search Section -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" id="search-tools" class="form-control" placeholder="Search calculator tools...">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools Grid -->
+        <div class="row g-4" id="tools-grid">
+            <!-- Percentage Calculator -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-percent tool-icon"></i>
+                        <h3 class="h5">Percentage Calculator</h3>
+                        <p class="tool-description mb-4">
+                            Calculate percentages easily. Find percentage of numbers, percentage change, and more.
+                        </p>
+                        <a href="percentage-calculator.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Age Calculator -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-calendar-alt tool-icon"></i>
+                        <h3 class="h5">Age Calculator</h3>
+                        <p class="tool-description mb-4">
+                            Calculate exact age between two dates. Get years, months, and days.
+                        </p>
+                        <a href="age-calculator.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BMI Calculator -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-weight tool-icon"></i>
+                        <h3 class="h5">BMI Calculator</h3>
+                        <p class="tool-description mb-4">
+                            Calculate Body Mass Index (BMI) and check your weight category.
+                        </p>
+                        <a href="bmi-calculator.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loan EMI Calculator -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-money-bill-wave tool-icon"></i>
+                        <h3 class="h5">Loan EMI Calculator</h3>
+                        <p class="tool-description mb-4">
+                            Calculate EMI for loans with detailed payment schedule and charts.
+                        </p>
+                        <a href="loan-emi-calculator.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scientific Calculator -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-calculator tool-icon"></i>
+                        <h3 class="h5">Scientific Calculator</h3>
+                        <p class="tool-description mb-4">
+                            Advanced calculator with scientific functions and unit conversions.
+                        </p>
+                        <a href="scientific-calculator.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discount Calculator -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-tags tool-icon"></i>
+                        <h3 class="h5">Discount Calculator</h3>
+                        <p class="tool-description mb-4">
+                            Calculate discounts, final prices, and savings on purchases.
+                        </p>
+                        <a href="discount-calculator.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Currency Converter -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-exchange-alt tool-icon"></i>
+                        <h3 class="h5">Currency Converter</h3>
+                        <p class="tool-description mb-4">
+                            Convert between different currencies with live exchange rates.
+                        </p>
+                        <a href="currency-converter.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Zone Converter -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-clock tool-icon"></i>
+                        <h3 class="h5">Time Zone Converter</h3>
+                        <p class="tool-description mb-4">
+                            Convert times between different time zones worldwide.
+                        </p>
+                        <a href="time-zone-converter.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Binary to Decimal -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-binary tool-icon"></i>
+                        <h3 class="h5">Binary to Decimal</h3>
+                        <p class="tool-description mb-4">
+                            Convert numbers between binary, decimal, and other number systems.
+                        </p>
+                        <a href="binary-decimal-converter.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tip Calculator -->
+            <div class="col-md-6 col-lg-4 tool-item">
+                <div class="card tool-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-receipt tool-icon"></i>
+                        <h3 class="h5">Tip Calculator</h3>
+                        <p class="tool-description mb-4">
+                            Calculate tips and split bills among multiple people.
+                        </p>
+                        <a href="tip-calculator.html" class="btn btn-primary">
+                            Open Tool <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad Section -->
+        <div class="ad-banner my-4">
+            <!-- Ad Space -->
+            Advertisement Space
+        </div>
+    </main>
+
+    <!-- Footer will be loaded dynamically -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script>
+        // Search functionality
+        document.getElementById('search-tools').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const tools = document.querySelectorAll('.tool-item');
+            
+            tools.forEach(tool => {
+                const title = tool.querySelector('h3').textContent.toLowerCase();
+                const description = tool.querySelector('.tool-description').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    tool.style.display = '';
+                } else {
+                    tool.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
