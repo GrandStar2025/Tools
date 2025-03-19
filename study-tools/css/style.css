@@ -1,0 +1,321 @@
+/* Video Player Styles */
+.video-container {
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Video List Styles */
+.video-list {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.video-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.video-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.video-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.video-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.video-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-item.active {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+}
+
+.video-thumbnail {
+    width: 120px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 12px;
+}
+
+.video-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.video-duration {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Notes Section Styles */
+.notes-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.notes-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.notes-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notes-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.notes-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.notes-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.note-item {
+    margin-bottom: 15px;
+}
+
+.note-item .card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-item .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.note-item .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.timestamp-btn {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.timestamp-btn:hover {
+    color: #0a58ca;
+    text-decoration: none;
+}
+
+.note-text {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Notes Input Section */
+.notes-input-section .card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.notes-input-section textarea {
+    border: 1px solid #dee2e6;
+    resize: vertical;
+    min-height: 100px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 12px;
+}
+
+.notes-input-section textarea:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+}
+
+#currentTimestamp {
+    font-family: monospace;
+    font-size: 1.1rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Notes Statistics */
+.notes-stats .card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.notes-stats .progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.notes-stats .progress-bar {
+    background-color: #0d6efd;
+    transition: width 0.6s ease;
+}
+
+/* Edit Note Form */
+.edit-note-form textarea {
+    border: 1px solid #dee2e6;
+    resize: vertical;
+    min-height: 80px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 8px;
+}
+
+.edit-note-form textarea:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+}
+
+/* Animations */
+@keyframes flash {
+    0% { background-color: #198754; }
+    100% { background-color: #f8f9fa; }
+}
+
+.timestamp-flash {
+    animation: flash 0.5s ease;
+}
+
+/* Playlist Section Styles */
+.playlist-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.playlist-item {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.playlist-item h5 {
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.playlist-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* Class Selector Styles */
+.class-selector {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.class-selector select {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.class-selector select:focus {
+    border-color: #2196f3;
+    box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .video-thumbnail {
+        width: 100px;
+        height: 56px;
+    }
+    
+    .video-title {
+        font-size: 0.85rem;
+    }
+    
+    .video-duration {
+        font-size: 0.75rem;
+    }
+    
+    .class-selector .col-md-4 {
+        margin-bottom: 10px;
+    }
+    
+    .notes-list {
+        max-height: 400px;
+    }
+    
+    .note-item .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .note-item .btn-group {
+        margin-top: 8px;
+    }
+    
+    #currentTimestamp {
+        font-size: 1rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.loading i {
+    font-size: 2rem;
+    color: #2196f3;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
